@@ -20,7 +20,7 @@ export class DynamicDatabase {
   ]);
   constructor(private http:HttpClient){}
 
-  data:any = this.http.get('../assets/movies-data.json').subscribe((data:any) =>  data);
+  data:any = this.http.get('../assets/movies-data.json').subscribe((data:any) =>  data);  // get movies -data from file
 
   dataMap = this.data2;
 
@@ -31,12 +31,12 @@ export class DynamicDatabase {
     return this.rootLevelNodes.map(name => new DynamicFlatNode(name, 0, true));
   }
 
-  getChildren(node: string): string[] | undefined {
+  getChildren(node: string): string[] | undefined {  //get children nodes
     console.log(node);
     return this.dataMap.get(node);
   }
 
-  isExpandable(node: string): boolean {
+  isExpandable(node: string): boolean { // check if node is expandable
     return this.dataMap.has(node);
   }
 }
@@ -62,6 +62,7 @@ export class DynamicDataSource implements DataSource<DynamicFlatNode> {
       }
     });
 
+    // read nodes and merge 
     return merge(collectionViewer.viewChange, this.dataChange).pipe(map(() => this.data));
   }
 
@@ -78,6 +79,7 @@ export class DynamicDataSource implements DataSource<DynamicFlatNode> {
 
 
   toggleNode(node: DynamicFlatNode, expand: boolean) {
+    // toggle node on click
     const children = this._database.getChildren(node.item);
     const index = this.data.indexOf(node);
     if (!children || index < 0) { // If no children, or cannot find the node, no op
@@ -112,6 +114,8 @@ export class DynamicDataSource implements DataSource<DynamicFlatNode> {
 })
 export class Task3Component {
   constructor( database: DynamicDatabase) {
+
+    //provide the source for the tree data
     this.treeControl = new FlatTreeControl<DynamicFlatNode>(this.getLevel, this.isExpandable);
     this.dataSource = new DynamicDataSource(this.treeControl, database);
 

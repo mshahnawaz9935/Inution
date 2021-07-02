@@ -24,7 +24,7 @@ export class DialogComponent {
     }
 
     getListFromNumber(number:number)
-    {
+    {  // get list name based on id
       let list : Array<any> = [];
       switch(number){
         case 1:
@@ -55,7 +55,7 @@ export class DialogComponent {
             }
             else  alert('Duplicates not allowed');
         }
-        else {
+        else {  // if not then delete from the current and add to the new list.
           var check =  this.checkDuplicate(this.dataService.todo , this.taskName);
           if(check == true)
           {
@@ -82,7 +82,7 @@ export class DialogComponent {
             else  alert('Duplicates not allowed');
        
         }
-        else {
+        else {  // if not then delete from the current and add to the new list.
           var check =  this.checkDuplicate(this.dataService.started , this.taskName);
           if(check == true)
           {
@@ -110,7 +110,7 @@ export class DialogComponent {
             else  alert('Duplicates not allowed');
 
         }
-        else {
+        else {  // if not then delete from the current and add to the new list.
           var check =  this.checkDuplicate(this.dataService.done , this.taskName);
           if(check == true)
           {
@@ -154,7 +154,7 @@ export class DialogComponent {
     }
 
     checkDuplicate(list :any , taskName : string)
-    {
+    { // check if task already exists
       for(var item of list)
       {
         if(item.toLowerCase() == taskName.toLowerCase())
@@ -176,7 +176,7 @@ export class Task2Component implements OnInit {
    }
 
   open(){
-    this.matDialog.open(DialogComponent,{
+    this.matDialog.open(DialogComponent,{ // define size of modal box
         height: '400px',
         width : '500px'
     })
