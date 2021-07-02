@@ -1,6 +1,8 @@
 # IntuitionTec
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+Make sure node is already installed on the system.
+To install all the dependencies please use npm install. Extra libraries used were Dev Extreme Data grid, Angular Material and Bootstrap.
 
 ## Development server
 
@@ -14,14 +16,16 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Task 1
+The grid was developed using devextreme data grid library which filters the data and displays into tabular format. The datasource used was the given devices.json file. Filters can be applied too.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Task2 
+Drag and drop functionality was implemented to move items from one list to another. Items can be added or edited from the list through the modal box pop-up.
 
-## Running end-to-end tests
+## Task 3
+Mat tree feature from Angular Material was used to display the nodes in the tree and its children.The datasource used was the given movies-data.json file. Because of lack of time not all of the features could have been added but the implementation achieved was close to 50%.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Task 4
+Routing was implemented and also a Nav Bar was created using Bootstrap to switch through different tasks.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
