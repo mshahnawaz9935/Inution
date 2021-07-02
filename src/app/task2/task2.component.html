@@ -1,0 +1,60 @@
+
+<div class="container" style="padding-top:20px">
+<div class="example-container">
+    <h1 class="card_title">To do</h1>
+   
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[startedList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box1" *ngFor="let item of todo" cdkDrag>
+        {{item}}
+        <img style="cursor:pointer;" (click)="edit(item, 1);" src="../assets/edit.svg" />
+      </div>
+    </div>
+  </div>
+  <div class="example-container">
+      <h1 class="card_title">Started</h1>
+    <div
+      cdkDropList
+      #startedList="cdkDropList"
+      [cdkDropListData]="started"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box2" *ngFor="let item of started" cdkDrag> {{item}}
+          <img style="cursor:pointer;" (click)="edit(item, 2);" src="../assets/edit.svg" /></div>
+    </div>
+  </div>
+  
+  <div class="example-container">
+      <h1 class="card_title">Done</h1>
+  
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box3" *ngFor="let item of done" cdkDrag>{{item}} 
+        <img style="cursor:pointer;" (click)="edit(item, 3);" src="../assets/edit.svg" />
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-5">
+      <button (click) ="open()" class="btn btn-primary">Add Task</button>
+      <h3>Drag and Drop to move items from one list to another. Also add button can add new items to a selected list.</h3>
+    </div>
+  </div>
+
+</div>
+
+

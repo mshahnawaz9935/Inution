@@ -1,0 +1,93 @@
+{
+    "categories":[
+        {
+            "id": 1,
+            "name": "Action"
+        }, {
+            "id": 2,
+            "name": "Adventure"
+        },{
+            "id": 3,
+            "name": "Crime"
+        }, {
+            "id": 4,
+            "name": "Comedy"
+        },{
+            "id": 5,
+            "name": "Horror"
+        }, {
+            "id": 6,
+            "name": "Triller"
+        }
+    ], "movies": [
+        {
+            "id": 1,
+            "name": "First Blood",
+            "categories": [1]
+        }, {
+            "id": 2,
+            "name": "Hot Shots",
+            "categories": [1, 4]
+        }, {
+            "id": 3,
+            "name": "Inside Man",
+            "categories": [3, 6]
+        }, {
+            "id": 4,
+            "name": "IT",
+            "categories": [5]
+        }, {
+            "id": 5,
+            "name": "Journey to the misterious island",
+            "categories": [1]
+        }, {
+            "id": 6,
+            "name": "The sum of all fears",
+            "categories": [1, 3, 6]
+        }, {
+            "id": 7,
+            "name": "Man on Fire",
+            "categories": [1, 3, 6]
+        }, {
+            "id": 8,
+            "name": "Jason Bourne",
+            "categories": [1, 6]
+        }, {
+            "id": 9,
+            "name": "Blade 2",
+            "categories": [1, 5]
+        }, {
+            "id": 10,
+            "name": "Boo",
+            "categories": [5]
+        }, {
+            "id": 11,
+            "name": "Thor Ragnarock",
+            "categories": [1, 2]
+        }, {
+            "id": 12,
+            "name": "Die Hard",
+            "categories": [1, 3]
+        }, {
+            "id": 13,
+            "name": "Spy",
+            "categories": [1, 4]
+        }, {
+            "id": 14,
+            "name": "The Equalizer",
+            "categories": [1, 3, 6]
+        }, {
+            "id": 15,
+            "name": "The Avengers",
+            "categories": [1, 2]
+        }, {
+            "id": 16,
+            "name": "Tenet",
+            "categories": [1, 6]
+        }, {
+            "id": 17,
+            "name": "Zombieland",
+            "categories": [1, 2, 4, 5]
+        }
+    ]
+}

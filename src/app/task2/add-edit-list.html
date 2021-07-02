@@ -1,0 +1,48 @@
+
+<form *ngIf="data == null"  #myForm1 = "ngForm"  (ngSubmit) ="addToList(myForm1)" novalidate>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Task Name</label>
+      <input style="margin-top:2%" type="text" name="taskName" [(ngModel)]="taskName" class="form-control" aria-describedby="emailHelp" placeholder="Enter Task" required>
+      <p style="padding-top:2%" >
+        <span *ngIf="myForm1.controls.taskName?.errors?.required">Task is required</span>
+    </p>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Select List</label>
+        <select style="margin-top:2%" class="form-control" [(ngModel)]="selectedList" name="selectedList" required>
+          <option *ngFor="let item of lists" [value]="item.value">{{item.name}}</option>
+       </select>
+       <p  style="padding-top:2%" >
+        <span *ngIf="myForm1.controls.selectedList?.errors?.required">Select an Option</span>
+       </p>
+      </div>
+      <br/>
+    
+    <button type="submit" [disabled]="myForm1.invalid" class="btn btn-primary" >Add</button>
+    
+  </form>
+  
+<form *ngIf="data != null" #myForm2 = "ngForm"  (ngSubmit) ="moveToList(myForm2)" novalidate>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Task Name</label>
+      <input type="text" name="taskName" [(ngModel)]="taskName" class="form-control" placeholder="Enter Task" required>
+      <p style="padding-top:2%" >
+        <span *ngIf="myForm2.controls.taskName?.errors?.required">Task is required</span>
+    </p>
+    </div>
+    <br/>
+    <div class="form-group">
+        <select class="form-control" [(ngModel)]="selectedList" name="selectedList" required>
+          <option *ngFor="let item of lists" [value]="item.value">{{item.name}}</option>
+       </select>
+       <p style="padding-top:2%" >
+        <span *ngIf="myForm2.controls.selectedList?.errors?.required">Move to other list</span>
+       </p>
+      </div>
+      <br/>
+    
+    <button type="submit" [disabled]="myForm2.invalid" class="btn btn-primary" >Update</button>
+    
+  </form>
+  
